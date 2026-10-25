@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cucarq0l34sv1"]
+
+[ext_resource type="Script" uid="uid://cctvp4diiwhx2" path="res://scripts/hud/robot_icon.gd" id="1_0vf6h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a3jnu"]
+bg_color = Color(0.11764706, 0.5921569, 1, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+
+[node name="RobotIcon" type="Control" unique_id=456338777]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_0vf6h")
+
+[node name="Arrow" type="Polygon2D" parent="." unique_id=1489903997]
+color = Color(0.11764706, 0.5921569, 1, 1)
+polygon = PackedVector2Array(0, -25, 8, -15, -8, -15)
+
+[node name="BaseCircle" type="Panel" parent="." unique_id=958754480]
+layout_mode = 0
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_a3jnu")
+
+[node name="Label" type="Label" parent="." unique_id=749372224]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -14.0
+offset_right = 35.0
+offset_bottom = 12.0
+theme_override_font_sizes/font_size = 18
+text = "3"

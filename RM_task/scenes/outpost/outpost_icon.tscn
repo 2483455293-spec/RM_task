@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://mg53y63p6k7k"]
+
+[ext_resource type="Script" uid="uid://k5uuhfcfdy71" path="res://scripts/hud/outpost_icon.gd" id="1_bwv7w"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_y708m"]
+
+[node name="OutpostIcon" type="Control" unique_id=1289605856]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(1.2515287, 1.2400005)
+script = ExtResource("1_bwv7w")
+
+[node name="TowerBase" type="Polygon2D" parent="." unique_id=1529775668]
+material = SubResource("CanvasItemMaterial_y708m")
+color = Color(0.11764706, 0.5921569, 1, 1)
+polygon = PackedVector2Array(2, 4, -2, 4, -4, 8, 4, 8)
+
+[node name="TowerBody" type="Polygon2D" parent="." unique_id=272356245]
+color = Color(0.11764706, 0.5921569, 1, 1)
+polygon = PackedVector2Array(-2, 4, 2, 4, 2, -8, -2, -8)
+
+[node name="TowerTop" type="Polygon2D" parent="." unique_id=970202286]
+color = Color(0.11764706, 0.5921569, 1, 1)
+polygon = PackedVector2Array(-3, -8, 3, -8, 3, -9, -3, -9)

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://81gpqyjbrl5f"]
+
+[ext_resource type="Script" uid="uid://tgf12qp53m2p" path="res://scripts/infantry/bullet.gd" id="1_hf8mt"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_2ropf"]
+radius = 0.009
+height = 0.017
+
+[node name="Bullet" type="Node3D" unique_id=440592421]
+script = ExtResource("1_hf8mt")
+bullet_speed = 22.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=50948757]
+mesh = SubResource("SphereMesh_2ropf")

@@ -1,0 +1,11 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+.godot/
+*.translation
+export_presets.cfg
+Thumbs.db
+Desktop.ini
+.vscode/
+*.swp
+*.swo

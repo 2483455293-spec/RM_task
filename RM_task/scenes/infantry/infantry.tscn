@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://lhxrohytnmvp"]
+
+[ext_resource type="Script" uid="uid://c7altpmx3txal" path="res://scripts/infantry/infantry_control.gd" id="1_mmosd"]
+[ext_resource type="Script" uid="uid://tgf12qp53m2p" path="res://scripts/infantry/bullet.gd" id="2_6yw7n"]
+[ext_resource type="AudioStream" uid="uid://ddd7u40free6c" path="res://assets/wav/fire.wav" id="3_o0mal"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_2ropf"]
+radius = 0.009
+height = 0.017
+
+[sub_resource type="PackedScene" id="PackedScene_2mrl4"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array()],
+"names": PackedStringArray("Bullet", "Node3D", "script", "bullet_speed", "MeshInstance3D", "MeshInstance3D", "mesh"),
+"node_count": 2,
+"node_ids": PackedInt32Array(440592421, 50948757),
+"node_paths": [NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 2, 2, 0, 3, 1, 0, 1073741824, 0, 5, 4, -1, 1, 6, 2, 0),
+"variants": [ExtResource("2_6yw7n"), 22.0, SubResource("SphereMesh_2ropf")],
+"version": 3
+}
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8jd4f"]
+radius = 0.2
+height = 0.4
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k2fy7"]
+radius = 0.2
+height = 0.4
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_58x22"]
+size = Vector3(0.4, 0.4, 0.4)
+
+[node name="Infantry" type="CharacterBody3D" unique_id=421144220]
+collision_layer = 2
+collision_mask = 45
+floor_max_angle = 0.83775806
+safe_margin = 0.01
+script = ExtResource("1_mmosd")
+bullet_scene = SubResource("PackedScene_2mrl4")
+
+[node name="ChassisMesh" type="MeshInstance3D" parent="." unique_id=1173348094]
+mesh = SubResource("CapsuleMesh_8jd4f")
+
+[node name="ChassisCollision" type="CollisionShape3D" parent="." unique_id=779823513]
+shape = SubResource("CapsuleShape3D_k2fy7")
+
+[node name="GimbalYaw" type="Node3D" parent="." unique_id=2012766461]
+
+[node name="GimbalPitch" type="Node3D" parent="GimbalYaw" unique_id=683976388]
+
+[node name="Camera3D" type="Camera3D" parent="GimbalYaw/GimbalPitch" unique_id=1344691837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2)
+keep_aspect = 0
+fov = 90.0
+near = 0.001
+
+[node name="Muzzle" type="Marker3D" parent="GimbalYaw/GimbalPitch" unique_id=43541442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3)
+
+[node name="FireTimer" type="Timer" parent="." unique_id=96996209]
+wait_time = 0.5
+
+[node name="ArmorFront" type="Area3D" parent="." unique_id=1380507645]
+collision_layer = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ArmorFront" unique_id=1195336476]
+shape = SubResource("BoxShape3D_58x22")
+
+[node name="FireSound" type="AudioStreamPlayer" parent="." unique_id=328197355]
+stream = ExtResource("3_o0mal")

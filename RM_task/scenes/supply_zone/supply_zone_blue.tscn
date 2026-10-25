@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cudbedfj3s17l"]
+
+[ext_resource type="Script" uid="uid://lhsm6ug3tf0p" path="res://scripts/game_mechanism/supply_zone.gd" id="1_77p1g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qqb0e"]
+albedo_color = Color(0.11764706, 0.11372549, 1, 1)
+emission_enabled = true
+emission = Color(0.11764706, 0.11372549, 1, 1)
+emission_energy_multiplier = 5.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_svaje"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3pw1b"]
+albedo_color = Color(0.1882353, 0.1882353, 0.1882353, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qqb0e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_svaje"]
+size = Vector3(2, 1, 2)
+
+[node name="SupplyZone" type="Area3D" unique_id=1013007268]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_77p1g")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1172868337]
+material_override = SubResource("StandardMaterial3D_qqb0e")
+mesh = SubResource("PlaneMesh_svaje")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=937325635]
+transform = Transform3D(0.967993, 0, 0, 0, 1, 0, 0, 0, 0.967993, 0, 0.0014293194, 0)
+material_override = SubResource("StandardMaterial3D_3pw1b")
+mesh = SubResource("PlaneMesh_qqb0e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=753209928]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_svaje")
+
+[node name="Timer" type="Timer" parent="." unique_id=388137230]

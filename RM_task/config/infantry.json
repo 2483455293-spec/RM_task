@@ -1,0 +1,16 @@
+{
+  "speed": 3.5,
+  "jump_speed": 2,
+  "max_hp": 200,
+  "max_heat": 120.0,
+  "max_ammo": 150,
+  "combat_timeout_ms": 3000,
+
+
+  "bullet_speed": 25.0,
+  "bullet_gravity": 9.8,
+  "bullet_lifetime": 3.0,
+
+
+  "valid_hit_min_normal_speed": 10
+}

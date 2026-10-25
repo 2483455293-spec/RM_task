@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bxio7muruspel"]
+
+[ext_resource type="PackedScene" uid="uid://brhmpx6urkv5v" path="res://assets/terrain/1-col.glb" id="1_pyrrf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gqmmt"]
+albedo_color = Color(0.53333336, 0.53333336, 0.53333336, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pyrrf"]
+points = PackedVector3Array(-3, -1, -1, 0.99862957, -1, -1, -3, -1, 1.1038353, 0.99862957, 1, -1, 35, -1, 2.4152043, 35, -1, 2.6967287, 0.99862957, 1, 0.99998236, 35, 1, 2.4152043)
+
+[node name="1-col" unique_id=2007597992 instance=ExtResource("1_pyrrf")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Cube_001" parent="." index="0" unique_id=84642893]
+material_override = SubResource("StandardMaterial3D_gqmmt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=266796811]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1978082427]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 1.625, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_pyrrf")

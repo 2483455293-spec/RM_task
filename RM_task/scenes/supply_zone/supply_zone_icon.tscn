@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://x23ph8ii4yxe"]
+
+[ext_resource type="Script" uid="uid://ccrijb2mgdlar" path="res://scripts/hud/supply_zone_icon.gd" id="1_o4luo"]
+
+[node name="SupplyZone" type="Control" unique_id=237452973]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_right = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1534319, 1.1534319)
+script = ExtResource("1_o4luo")
+
+[node name="up" type="Polygon2D" parent="." unique_id=391853720]
+color = Color(0.11764706, 0.5921569, 1, 1)
+polygon = PackedVector2Array(5, 8, 5, -8, -5, -8, -5, 8)
+
+[node name="mid" type="Polygon2D" parent="." unique_id=12022836]
+color = Color(0.11764706, 0.5921569, 1, 1)
+polygon = PackedVector2Array(5.5, 1, 5.5, -1, -20, -1, -20, 1)
+
+[node name="down" type="Polygon2D" parent="." unique_id=747243969]
+position = Vector2(-22, 0)
+color = Color(0.11764706, 0.5921569, 1, 1)
+polygon = PackedVector2Array(2, 2, 2, -2, -2, -2, -2, 2)

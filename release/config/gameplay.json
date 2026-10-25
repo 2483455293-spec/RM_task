@@ -1,0 +1,32 @@
+{
+  "supply_heal_percentage": 0.1,
+  "supply_ammo": 10,
+
+
+  "agency_mini_rotation": 1.047197,
+  "agency_mini_timeout": 2.5,
+
+  "agency_large_main_timeout": 2.5,
+  "agency_large_window_timeout": 1.0,
+  "agency_large_a_min": 0.780,
+  "agency_large_a_max": 1.045,
+  "agency_large_w_min": 1.884,
+  "agency_large_w_max": 2.000,
+  "agency_large_b_base": 2.090,
+
+
+  "armor_flash_duration": 0.15,
+  "armor_valid_min_speed": 8,
+  "armor_damage": 10.0,
+
+
+  "network_ip": "127.0.0.1",
+  "network_port": 9000,
+  "network_fps": 15,
+
+  "camera_fov": 90.0,
+  "camera_keep_width": true,
+  "camera_res_x": 1920,
+  "camera_res_y": 1080,
+  "jpeg_quality": 0.8
+}
