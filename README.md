@@ -21,11 +21,13 @@
 
 ```bash
 # 监听 9000 端口，接收图像
-python3 recv_frame.py
+py recv_frame.py
 
 # 监听 9001 端口，接收状态 JSON
-python3 recv_state.py
+py recv_state.py
 ```
+> ⚠️ **通信启动顺序**：TCP 服务端由 Python 脚本承担，请**先启动 Python 接收程序，再打开 RM_Simulation.exe**。
+> 如果顺序颠倒，Godot 客户端尝试连接时端口无人监听，图传、状态通道将建立失败。
 
 ## 🎮 操作表 (Controls)
 
